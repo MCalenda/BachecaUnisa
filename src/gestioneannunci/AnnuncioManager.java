@@ -330,11 +330,11 @@ public class AnnuncioManager {
       System.out.println("Query: " + preparedStatement.toString());
       ResultSet rs = preparedStatement.executeQuery();  
       if (!rs.next()) {
-        temp = null;
+        temp = new ArrayList<Annuncio>();
       } else {
         temp = listaAnnunci(rs);
-      } 
-    } finally {      
+      }
+    } finally {
       DriverManagerConnectionPool.releaseConnection(connection);
     }
     return temp;

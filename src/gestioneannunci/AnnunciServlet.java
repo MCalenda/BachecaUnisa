@@ -120,25 +120,23 @@ public class AnnunciServlet extends HttpServlet {
       }
 
       if (azione.equalsIgnoreCase("Crea annuncio")) {
-        if (sessione.getRuolo().equals("Utente")) {
-          String utente = request.getParameter("usernameUtente");
-          Utente u = utenteManager.recuperaPerUsername(utente);
-          if (u.getNumAnnunci() < 5) {
-            String dipartimento = request.getParameter("dipartimento");
-            String titolo = request.getParameter("titolo");
-            String descrizione = request.getParameter("descrizione");
-            String tipologiastr = request.getParameter("tipologia");
-            Boolean tipologia = false;
-            if (tipologiastr.equals("1")) {
-              tipologia = true;
-            }
-            creaAnnuncio(dipartimento, titolo, descrizione, tipologia, u.getUsername());
-            response.sendRedirect(request.getContextPath()
-                          + "/UtenteServlet?azione=aggiungiAnnuncio");
-          } else {
-            response.sendRedirect(request.getContextPath()
-                         + "/Homepage.jsp?error=numAnnunci");
+        String utente = request.getParameter("usernameUtente");
+        Utente u = utenteManager.recuperaPerUsername(utente);
+        if (u.getNumAnnunci() < 5) {
+          String dipartimento = request.getParameter("dipartimento");
+          String titolo = request.getParameter("titolo");
+          String descrizione = request.getParameter("descrizione");
+          String tipologiastr = request.getParameter("tipologia");
+          Boolean tipologia = false;
+          if (tipologiastr.equals("1")) {
+            tipologia = true;
           }
+          creaAnnuncio(dipartimento, titolo, descrizione, tipologia, u.getUsername());
+          response.sendRedirect(request.getContextPath()
+                        + "/UtenteServlet?azione=aggiungiAnnuncio");
+        } else {
+          response.sendRedirect(request.getContextPath()
+                       + "/Homepage.jsp?error=numAnnunci");
         }
       }
 
