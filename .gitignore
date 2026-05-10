@@ -1,0 +1,6 @@
+bin/
+RemoteSystemsTempFiles/
+*.class
+*.war
+*.ear
+.DS_Store
