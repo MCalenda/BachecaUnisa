@@ -137,6 +137,7 @@ public class RecensioniServlet extends HttpServlet {
 
   private void modificaRecensione(int id, int valutazione, String descrizione) throws SQLException {
     Recensione recensione = recensioneManager.recuperaPerId(id);
+    if (recensione == null) return;
     recensione.setDescrizione(descrizione);
     recensione.setValutazione(valutazione);
     recensioneManager.modificaRecensione(recensione);

@@ -109,11 +109,12 @@ public class RecensioneManager {
     PreparedStatement preparedStatement = null;
     Recensione temp = null;
 
-    String sql = "SELECT * FROM " + TABLENAME + " WHERE ID LIKE '" + id + "'";
+    String sql = "SELECT * FROM " + TABLENAME + " WHERE ID = ?";
 
     try {
       connection = DriverManagerConnectionPool.getConnection();
       preparedStatement = connection.prepareStatement(sql);
+      preparedStatement.setInt(1, id);
       ResultSet rs = preparedStatement.executeQuery();
       if (rs.next()) {
         temp = new Recensione(rs.getInt("ID"), rs.getInt("Valutazione"),

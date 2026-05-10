@@ -180,11 +180,6 @@ public class UtenteServlet extends HttpServlet {
 
   private void doLogout(HttpServletRequest request, HttpServletResponse response)
       throws ServletException, IOException {
-    if (request.getSession().getAttribute("Utente") == null
-        || request.getSession().getAttribute("Gestore") == null) {
-      response.sendRedirect(request.getContextPath() + "/Login.jsp");
-      return;
-    }
     request.getSession().removeAttribute("Utente");
     request.getSession().removeAttribute("Gestore");
     request.getSession().invalidate();
