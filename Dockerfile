@@ -20,7 +20,7 @@ FROM tomcat:9.0-jdk11-openjdk-slim
 
 RUN rm -rf /usr/local/tomcat/webapps/*
 
-COPY WebContent                /usr/local/tomcat/webapps/BachecaUnisa
-COPY --from=builder /build/classes /usr/local/tomcat/webapps/BachecaUnisa/WEB-INF/classes
+COPY WebContent                /usr/local/tomcat/webapps/BACHECAUNISA
+COPY --from=builder /build/classes /usr/local/tomcat/webapps/BACHECAUNISA/WEB-INF/classes
 
 EXPOSE 8080

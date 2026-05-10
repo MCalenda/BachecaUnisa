@@ -26,5 +26,13 @@ services:
       db:
         condition: service_healthy
 
+  adminer:
+    image: adminer
+    ports:
+      - "8081:8080"
+    depends_on:
+      db:
+        condition: service_healthy
+
 volumes:
   bacheca_data:
