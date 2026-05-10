@@ -1,0 +1,109 @@
+body, html 
+{
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    background-image: url("IMAGES/bg-reg.png");
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+button, input 
+{
+    outline: none;
+}
+
+.contna
+{
+    display: inline-block;
+    float: right;
+    width: 60%;
+    padding: 2% 10%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.titlena
+{
+    color: white;
+}
+
+.title
+{
+    display: block;
+    width: 60%;
+    padding: 10px;
+    margin: 10px auto;
+    border: none;
+    border-radius: 40px;
+    background-color: #f1f1f1;
+    text-align: center;
+    outline: none;
+    transition: width 0.4s ease-in-out;
+}
+
+.title:focus
+{
+    width: 90%;
+    background-color: #ddd;
+}
+#barraleft
+{
+    position: fixed;
+    float: left;
+    width: 20%;
+    height: 100%;
+}
+
+
+.etichettaTutorato , .etichettaGruppo
+{
+    padding: 5px;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 20px;
+    margin: 0 auto;
+    width: 10%;
+}
+
+.etichettaTutorato
+{
+    background-color: orange;
+}
+
+.etichettaGruppo
+{
+    background-color: greenyellow;
+}
+
+.txtna
+{
+    margin: 10px auto;
+    padding: 10px;
+    width: 100%;
+    height: 200px;
+    border-radius: 20px;
+    border: none;
+    resize: none;
+    outline:none;
+    background-color: #fff;
+}
+
+.sfdbna
+{
+
+    width: 200px;
+    padding:10px;
+    margin: 0 auto;
+    border-radius: 10px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.sfdbna:hover
+{
+    background-color: #DCDCDC;
+}

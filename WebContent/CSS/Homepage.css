@@ -1,0 +1,196 @@
+body, html 
+{
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    background-image: url("IMAGES/bg-reg.png");
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+button, input 
+{
+    outline: none;
+}
+
+#listaAnnunci
+{
+    width: 80%;
+    margin: 0 auto;
+    float: right;
+}
+.annuncioTutorato, .annuncioGruppo, .profilo
+{
+    width: 80%;
+    margin: 20px auto;
+    padding: 10px;
+    text-align: center;
+    border-radius: 70px;
+    background-color:  rgb(256,256,256);
+}
+
+.annuncioTutorato
+{
+    border: solid orange;
+    border-width: 5px;
+}
+
+.annuncioGruppo
+{
+    border: solid greenyellow;
+    border-width: 5px;
+}
+
+.preview
+{
+    margin: 30px;
+}
+
+.Titolo h2
+{
+    margin: 0;
+}
+
+.Titolo a, h3
+{
+    margin: 0 0 10px;
+    font-size: 14px;
+    font-weight: 400;
+    text-decoration: none;
+    color: black;
+}
+
+#listaProfili
+{
+    width: 80%;
+    margin: 0 auto;
+    float: right;
+    display: none;
+}
+
+#switchTab
+{
+    float: right;
+    display: inline-block;
+    width: 80%;
+    text-align: center;
+}
+#tabAnnunci, #tabProfilo
+{
+    display: inline-block;
+    width: 100px;
+    padding:10px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+#tabAnnunci:hover, #tabProfilo:hover
+{
+    background-color: #DCDCDC;
+}
+
+#barraleft
+{
+    position: fixed;
+    float: left;
+    width: 20%;
+    height: 100%;
+}
+#barrasopra
+{
+    width: 80%;
+    float: right;
+}
+
+.etichettaTutorato , .etichettaGruppo
+{
+    padding: 5px;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 20px;
+    width: 20%;
+    display: inline-block;
+    float: right;
+    margin: 0 40px;
+}
+
+.etichettaTutorato
+{
+    background-color: orange;
+}
+
+.etichettaGruppo
+{
+    background-color: greenyellow;
+}
+
+.dipartimento
+{
+    float: left;
+    display: inline;
+    margin: 0 40px;
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 5px;
+}
+
+.tags
+{
+    display: inline-block;
+    width: 100%;
+}
+
+.errorRicerca
+{
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    padding: 20px;
+    font-size: 25px;   
+}
+
+.btnGrup, .btnTut, .btnProf
+{
+    width: 150px;
+    padding:10px;
+    margin: 0 auto;
+    border-radius: 10px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.btnGrup:hover
+{
+    background-color: #ccffaa;
+}
+
+.btnTut:hover
+{
+    background-color: #ffd0b4;
+}
+
+.btnProf:hover
+{
+    background-color:  #DCDCDC;
+}
+
+.btn .btnTut
+{
+    border: solid orange;
+}
+
+.btn .btnGrup
+{
+    border: solid greenyellow;
+}
+
+.btn form
+{
+    display: inline-block;
+}

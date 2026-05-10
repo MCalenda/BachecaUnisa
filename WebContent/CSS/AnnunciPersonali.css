@@ -1,0 +1,154 @@
+body, html 
+{
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    background-image: url("IMAGES/bg-reg.png");
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+#barraleft
+{
+    position: fixed;
+    float: left;
+    width: 20%;
+    height: 100%;
+}
+
+#AnnunciPersonali
+{
+    width: 80%;
+    margin: 0 auto;
+    float: right;
+}
+
+.annuncioTutorato, .annuncioGruppo
+{
+    width: 80%;
+    margin: 20px auto;
+    padding: 10px;
+    text-align: center;
+    border-radius: 70px;
+    background-color:  rgb(256,256,256);
+}
+
+.annuncioTutorato
+{
+    border: solid orange;
+    border-width: 5px;
+}
+
+.annuncioGruppo
+{
+    border: solid greenyellow;
+    border-width: 5px;
+}
+
+.Titolo h2
+{
+    margin: 0;
+}
+
+.Titolo h3 
+{
+    margin: 0 0 10px;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.preview
+{
+    margin: 30px;
+}
+
+.etichettaTutorato , .etichettaGruppo
+{
+    padding: 5px;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 20px;
+    width: 20%;
+    display: inline-block;
+    float: right;
+    margin: 0 40px;
+}
+
+.etichettaTutorato
+{
+    background-color: orange;
+}
+
+.etichettaGruppo
+{
+    background-color: greenyellow;
+}
+
+.title
+{
+    color: white;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.dipartimento
+{
+    float: left;
+    display: inline;
+    margin: 0 40px;
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 5px;
+}
+
+.tags
+{
+    display: inline-block;
+    width: 100%;
+}
+
+.btn form
+{
+    display: inline-block;
+}
+
+.btn button
+{
+    width: 120px;
+    padding:10px;
+    margin: 0 auto;
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+
+.btn .btnTut
+{
+    border: solid orange;
+}
+
+.btn .btnGrup
+{
+    border: solid greenyellow;
+}
+
+.btnGrup:hover
+{
+    background-color: #ccffaa;
+}
+
+.btnTut:hover
+{
+    background-color: #ffd0b4;
+}
+
+.btnProf:hover
+{
+    background-color:  #DCDCDC;
+}
