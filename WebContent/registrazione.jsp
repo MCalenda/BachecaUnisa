@@ -19,7 +19,7 @@
             <% String registered = (String) request.getParameter("ar");
                 System.out.println(registered);
                 if (registered != null && registered.equalsIgnoreCase("t")) {%>
-            <h3><font color="red">Questo utente esiste già</font></h3>
+            <h3><font color="red">Questo utente esiste giï¿½</font></h3>
                 <%}%>
             <div id="field">   
                 <form accept-charset="utf-8" id="register" name = "register" class="register" method="Post" action="/BACHECAUNISA/UtenteServlet?azione=creaUtente">
@@ -27,9 +27,9 @@
                     <input type="text" placeholder="Cognome" maxlength="20" pattern="[a-zA-Z\s]{1,}" class="campo" name="cognome" required="required" title="Solo lettere">
                     <div id="sextext">
                         <select name="sesso" class="sex">
-                            <option value="maschio">Maschio</option>
-                            <option value="femmina">Femmina</option>
-                            <option value="altro">Altro</option>
+                            <option value="M">Maschio</option>
+                            <option value="F">Femmina</option>
+                            <option value="A">Altro</option>
                         </select>
                     </div>
                     <input id="nomefield" placeholder="Username" maxlength="20" type="text" pattern="[a-zA-Z0-9]{1,}" class="campo" name="username" required="required" title="Solo lettere e numeri">
