@@ -6,49 +6,37 @@ import java.sql.SQLException;
 import java.util.LinkedList;
 import java.util.List;
 
-
 public class DriverManagerConnectionPool {
 
   private static List<Connection> freeDbConnections;
-  
+
   static {
     freeDbConnections = new LinkedList<Connection>();
     try {
       Class.forName("com.mysql.jdbc.Driver");
     } catch (ClassNotFoundException e) {
-      System.out.println("DB driver not found: " + e.getMessage());
+      e.printStackTrace();
     }
-    
   }
-  
+
   private static synchronized Connection createDbConnection() throws SQLException {
-    Connection newConnection = null;
     String host     = System.getenv("DB_HOST") != null ? System.getenv("DB_HOST") : "localhost";
     String username = System.getenv("DB_USER") != null ? System.getenv("DB_USER") : "root";
     String password = System.getenv("DB_PASS") != null ? System.getenv("DB_PASS") : "0000";
     String dbName   = System.getenv("DB_NAME") != null ? System.getenv("DB_NAME") : "Bacheca";
 
-    newConnection = DriverManager.getConnection(
+    Connection newConnection = DriverManager.getConnection(
         "jdbc:mysql://" + host + ":3306/" + dbName
         + "?zeroDateTimeBehavior=convertToNull&useSSL=false", username, password);
-    
-    System.out.println("Create new DB connection");
     newConnection.setAutoCommit(false);
     return newConnection;
   }
-  
-  /**
-   * Il metodo restituisce una connessione dal suo pool di connessioni libere.
-   * @return connessione libera
-   * @throws java.sql.SQLException se la connessione fallisce
-   */
-  
+
   public static synchronized Connection getConnection() throws SQLException {
     Connection connection;
     if (!freeDbConnections.isEmpty()) {
       connection = (Connection) freeDbConnections.get(0);
       freeDbConnections.remove(0);
-      
       try {
         if (connection.isClosed()) {
           connection = getConnection();
@@ -60,21 +48,12 @@ public class DriverManagerConnectionPool {
     } else {
       connection = createDbConnection();
     }
-    
     return connection;
   }
-  
-  /**
-   * Il metodo rilascia la connessione inviata e la riposiziona
-   * nell'array di connessioni libere.
-   * @param connection connessione da liberare
-   * @throws java.sql.SQLException se il rilascio di connessione fallisce
-   */
-  
+
   public static synchronized void releaseConnection(Connection connection) throws SQLException {
-    if (connection != null) { 
+    if (connection != null) {
       freeDbConnections.add(connection);
     }
   }
-  
 }
