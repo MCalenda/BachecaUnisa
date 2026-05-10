@@ -32,7 +32,7 @@
 	            } else if (lista2 == null) {
 	                System.out.println("Lista U non trovata");
 	                response.sendRedirect("/BACHECAUNISA/UtenteServlet?azione=stampaUtenti");
-	            
+	                return;
 	            }
             } else {
               request.getSession().removeAttribute("arisultato");

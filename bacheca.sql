@@ -58,5 +58,5 @@ CREATE TABLE IF NOT EXISTS Segnalazione (
   FOREIGN KEY (SegnalatoR) REFERENCES Recensione(ID)     ON DELETE CASCADE
 ) ENGINE=InnoDB;
 
--- Utente gestore di default (username: admin, password: admin)
-INSERT IGNORE INTO Utente VALUES ('Admin', 'Admin', 'M', 'admin', 'admin', 1, 0, 'Amministratore del sistema', 0);
+-- Utente gestore di default (username: admin, password: adminadmin)
+INSERT IGNORE INTO Utente VALUES ('Admin', 'Admin', 'M', 'admin', 'adminadmin', 1, 0, 'Amministratore del sistema', 0);

@@ -198,7 +198,10 @@ public class AnnuncioManager {
       ResultSet rs = preparedStatement.executeQuery();
       if (rs.first()) {
         temp = listaAnnunci(rs);
-      } 
+      }
+      if (temp == null) {
+        temp = new ArrayList<Annuncio>();
+      }
     } finally {
       DriverManagerConnectionPool.releaseConnection(connection);
     }
