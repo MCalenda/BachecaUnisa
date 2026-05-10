@@ -221,12 +221,8 @@ public class AnnuncioManager {
     String str = Integer.toString(id);
 
     String sql = "SELECT * FROM " + TABLENAME + " WHERE id = ?  ";
-    String flush = "FLUSH TABLES " + TABLENAME; 
     try {
       connection = DriverManagerConnectionPool.getConnection();
-      preparedStatement = connection.prepareStatement(flush);
-      preparedStatement.executeUpdate();
-      connection.commit();
       preparedStatement = connection.prepareStatement(sql);
       preparedStatement.setString(1, str);
       System.out.println("Query: " + preparedStatement.toString());
@@ -267,12 +263,8 @@ public class AnnuncioManager {
 
     String sql = "SELECT * FROM " + TABLENAME + " WHERE (Descrizione LIKE ? OR Titolo LIKE ?)"
         + " AND Tipologia = ? AND Dipartimento = ? ";
-    String flush = "FLUSH TABLES " + TABLENAME; 
     try {
       connection = DriverManagerConnectionPool.getConnection();
-      preparedStatement = connection.prepareStatement(flush);
-      preparedStatement.executeUpdate();
-      connection.commit();
       preparedStatement = connection.prepareStatement(sql);
       preparedStatement.setString(1, "%" + descrizione + "%");
       preparedStatement.setString(2, "%" + descrizione + "%");
@@ -305,12 +297,8 @@ public class AnnuncioManager {
     ArrayList<Annuncio> temp;
     
     String sql = "SELECT * FROM " + TABLENAME + " WHERE Dipartimento = ?  ";
-    String flush = "FLUSH TABLES " + TABLENAME; 
     try {
       connection = DriverManagerConnectionPool.getConnection();
-      preparedStatement = connection.prepareStatement(flush);
-      preparedStatement.executeUpdate();
-      connection.commit();
       preparedStatement = connection.prepareStatement(sql);
       preparedStatement.setString(1, dipartimento);
       System.out.println("Query: " + preparedStatement.toString());
@@ -334,13 +322,9 @@ public class AnnuncioManager {
     ArrayList<Annuncio> temp;
     
     String sql = "SELECT * FROM " + TABLENAME + " WHERE Utente_Username = ?  ";
-    String flush = "FLUSH TABLES " + TABLENAME; 
 
     try {
       connection = DriverManagerConnectionPool.getConnection();
-      preparedStatement = connection.prepareStatement(flush);
-      preparedStatement.executeUpdate();
-      connection.commit();    
       preparedStatement = connection.prepareStatement(sql);
       preparedStatement.setString(1, username);
       System.out.println("Query: " + preparedStatement.toString());
