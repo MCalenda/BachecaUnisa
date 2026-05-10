@@ -1,0 +1,6 @@
+bin/
+.git/
+.settings/
+RemoteSystemsTempFiles/
+*.class
+*.md

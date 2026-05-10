@@ -23,10 +23,13 @@ public class DriverManagerConnectionPool {
   
   private static synchronized Connection createDbConnection() throws SQLException {
     Connection newConnection = null;
-    String username = "root";
-    String password = "0000";
-    
-    newConnection = DriverManager.getConnection("jdbc:mysql://localhost:3306/Bacheca"
+    String host     = System.getenv("DB_HOST") != null ? System.getenv("DB_HOST") : "localhost";
+    String username = System.getenv("DB_USER") != null ? System.getenv("DB_USER") : "root";
+    String password = System.getenv("DB_PASS") != null ? System.getenv("DB_PASS") : "0000";
+    String dbName   = System.getenv("DB_NAME") != null ? System.getenv("DB_NAME") : "Bacheca";
+
+    newConnection = DriverManager.getConnection(
+        "jdbc:mysql://" + host + ":3306/" + dbName
         + "?zeroDateTimeBehavior=convertToNull&useSSL=false", username, password);
     
     System.out.println("Create new DB connection");
