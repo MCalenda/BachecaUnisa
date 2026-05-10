@@ -4,3 +4,11 @@ RemoteSystemsTempFiles/
 *.war
 *.ear
 .DS_Store
+
+# Eclipse IDE
+.classpath
+.project
+.settings/
+
+# Duplicate jars (keep only -bin.jar referenced by Dockerfile)
+WebContent/WEB-INF/lib/mysql-connector-java-5.1.47.jar
