@@ -76,10 +76,11 @@ public class AnnunciServlet extends HttpServlet {
         } else if (filtro.equalsIgnoreCase("utente")) {
           String utente = request.getParameter("usernameUtente");
           ArrayList<Annuncio> risultato = recuperaPerUtente(utente);
-          request.getSession().setAttribute("arisultato", risultato);
           if (request.getParameter("luogo") != null) {
+            request.getSession().setAttribute("annunciPersonali", risultato);
             response.sendRedirect(request.getContextPath() + "/AnnunciPersonali.jsp");
           } else {
+            request.getSession().setAttribute("arisultato", risultato);
             response.sendRedirect(request.getContextPath() + "/Homepage.jsp");
           }
           
@@ -143,6 +144,10 @@ public class AnnunciServlet extends HttpServlet {
       if (azione.equalsIgnoreCase("visualizzannuncio")) {
         int id = Integer.parseInt(request.getParameter("id"));
         Annuncio annuncioTrovato = annuncioManager.recuperaPerId(id);
+        if (annuncioTrovato == null) {
+          response.sendRedirect(request.getContextPath() + "/Homepage.jsp");
+          return;
+        }
         System.out.println(annuncioTrovato.getUsernameUtente());
         request.getSession().setAttribute("annuncioTrovato", annuncioTrovato);
         System.out.println("Titolo:" + annuncioTrovato.getTitolo());
